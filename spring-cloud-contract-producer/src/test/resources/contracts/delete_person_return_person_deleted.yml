@@ -1,0 +1,9 @@
+name: "delete person and return person deleted message"
+request:
+  method: DELETE
+  url: /person/delete/7
+response:
+  status: 200
+  body: "Person Deleted"
+  headers:
+    Content-Type: application/json

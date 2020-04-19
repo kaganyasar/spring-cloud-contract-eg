@@ -1,0 +1,9 @@
+name: "delete person throw exception then return person not deleted message"
+request:
+  method: DELETE
+  url: /person/delete/6
+response:
+  status: 200
+  body: "Person Not Deleted"
+  headers:
+    Content-Type: application/json

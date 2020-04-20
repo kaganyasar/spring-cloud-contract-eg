@@ -1,0 +1,18 @@
+name: "create new person and return created person in yml model"
+request:
+  method: POST
+  url: /person/createNewPerson
+  body:
+    id: "4"
+    name: "ExampleUser"
+    surname: "ExampleUser"
+  headers:
+    Content-Type: application/json
+response:
+  status: 200
+  body:
+    id: "4"
+    name: "ExampleUser"
+    surname: "ExampleUser"
+  headers:
+    Content-Type: application/json

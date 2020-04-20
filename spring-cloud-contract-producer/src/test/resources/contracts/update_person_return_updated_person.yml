@@ -1,0 +1,17 @@
+name: "update person and return updated person"
+request:
+  method: PUT
+  url: /person/update/4
+  body:
+    name: "BenFero"
+    surname: "BenFero"
+  headers:
+    Content-Type: application/json
+response:
+  status: 200
+  body:
+    id: "4"
+    name: "BenFero"
+    surname: "BenFero"
+  headers:
+    Content-Type: application/json

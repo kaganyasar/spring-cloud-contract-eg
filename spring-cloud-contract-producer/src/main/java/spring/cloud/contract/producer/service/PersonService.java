@@ -21,4 +21,21 @@ public class PersonService {
     public Person findPersonById(Long id) {
         return personMap.get(id);
     }
+
+    public Person createNewPerson(Person person) {
+        return personMap.put(person.getId(), person);
+    }
+
+    public Person createNewPerson2(Person person){
+        return personMap.put(person.getId(), person);
+    }
+
+    public Person updatePerson(Person person,Long personId) {
+        person.setId(personId);
+        return personMap.put(personId,person);
+    }
+
+    public void deletePerson(Long personId) throws Exception{
+        personMap.remove(personId);
+    }
 }

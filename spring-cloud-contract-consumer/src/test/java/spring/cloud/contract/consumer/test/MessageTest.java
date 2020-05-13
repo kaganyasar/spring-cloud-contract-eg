@@ -31,6 +31,10 @@ public class MessageTest {
 
     @Autowired
     PersonStreamListener application;
+        
+    static {
+        System.setProperty("maven.repo.local" , "D:\\mavenRepo");
+    }    
 
 
     @Test

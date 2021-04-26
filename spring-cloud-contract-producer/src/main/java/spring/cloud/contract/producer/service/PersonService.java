@@ -26,16 +26,16 @@ public class PersonService {
         return personMap.put(person.getId(), person);
     }
 
-    public Person createNewPerson2(Person person){
+    public Person createNewPerson2(Person person) {
         return personMap.put(person.getId(), person);
     }
 
-    public Person updatePerson(Person person,Long personId) {
+    public Person updatePerson(Person person, Long personId) {
         person.setId(personId);
-        return personMap.put(personId,person);
+        return personMap.put(personId, person);
     }
 
-    public void deletePerson(Long personId) throws Exception{
+    public void deletePerson(Long personId) throws Exception {
         personMap.remove(personId);
     }
 }

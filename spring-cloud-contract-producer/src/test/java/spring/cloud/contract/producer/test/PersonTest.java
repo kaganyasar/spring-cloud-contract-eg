@@ -45,12 +45,12 @@ public abstract class PersonTest {
         //return olarak Person objesi dönecek ve controller bu objeyi
         //döndüğü için contractta yazdığımız response u doğruluyacak.
         Mockito.when(personService.createNewPerson(any(Person.class)))
-                .thenReturn( new Person(4L,"ExampleUser","ExampleUser"));
+                .thenReturn(new Person(4L, "ExampleUser", "ExampleUser"));
 
         //createNewPerson2 herhangi bir Person objesi ile çağrıldığında
         //return olarak Person objesi dönecek ve controller Person Created dönmesini bekliyoruz
         Mockito.when(personService.createNewPerson2(any(Person.class)))
-                .thenReturn( new Person(8L,"ExampleUser2","ExampleUser2"));
+                .thenReturn(new Person(8L, "ExampleUser2", "ExampleUser2"));
 
         //createNewPerson2 herhangi bir person objesi aldığında null dönmesini söylüyoruz
         //controller da null döndüğü için Person Created mesajını yazmasını sağlıyacak.
@@ -58,8 +58,8 @@ public abstract class PersonTest {
 
         //updatePerson herhangi bir person objesi ve personId:4 aldığında
         //thenReturn deki objeyi dönmesini söylüyoruz
-        Mockito.when(personService.updatePerson(any(Person.class),eq(4L)))
-                .thenReturn( new Person(4L,"BenFero","BenFero"));
+        Mockito.when(personService.updatePerson(any(Person.class), eq(4L)))
+                .thenReturn(new Person(4L, "BenFero", "BenFero"));
 
         //DeletePerson personId:6 ile çağrıldığında exception fırlatacak ve
         //controller da exception yakalandığı için person not deleted mesajını
@@ -70,9 +70,7 @@ public abstract class PersonTest {
         Mockito.doNothing().when(personService).deletePerson(7L);
     }
 
-
     public void trigger() {
         this.personRestController.findPersonByIdAndSend(4L);
     }
-
 }

@@ -21,5 +21,4 @@ class MessageRestController {
         Person person = this.restTemplate.getForObject("http://localhost:8081/person/{personId}", Person.class, personId);
         return "Hello " + person.getName();
     }
-
 }

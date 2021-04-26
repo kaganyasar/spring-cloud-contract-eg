@@ -34,13 +34,12 @@ public class PersonRestController {
         return personService.createNewPerson(person);
     }
 
-
     @PostMapping(path = "/person/createNewPerson2", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> createNewPerson2(@RequestBody Person person) {
         Person person1 = personService.createNewPerson2(person);
-        if(person1 == null){
+        if (person1 == null) {
             return ResponseEntity.ok().body("Person Not Created");
-        }else{
+        } else {
             return ResponseEntity.ok().body("Person Created");
         }
     }
@@ -48,14 +47,14 @@ public class PersonRestController {
     @PutMapping(path = "/person/update/{personId}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     public Person updatePerson(@RequestBody Person person, @PathVariable("personId") Long personId) {
-        //return new Person(personId,"BenFero","BenFero");
         return personService.updatePerson(person, personId);
     }
+
     @DeleteMapping(path = "person/delete/{personId}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> deletePerson(@PathVariable("personId") Long personId){
-        try{
+    public ResponseEntity<String> deletePerson(@PathVariable("personId") Long personId) {
+        try {
             personService.deletePerson(personId);
-        }catch (Exception ex){
+        } catch (Exception ex) {
             ex.printStackTrace();
             return ResponseEntity.ok().body("Person Not Deleted");
         }

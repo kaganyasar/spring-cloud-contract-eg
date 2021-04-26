@@ -32,7 +32,6 @@ public class MessageTest {
     @Autowired
     PersonStreamListener application;
 
-
     @Test
     public void get_person_from_service_contract() {
         // given:
@@ -46,7 +45,6 @@ public class MessageTest {
         BDDAssertions.then(personResponseEntity.getBody().getId()).isEqualTo(4L);
         BDDAssertions.then(personResponseEntity.getBody().getName()).isEqualTo("Jack");
         BDDAssertions.then(personResponseEntity.getBody().getSurname()).isEqualTo("Black");
-
     }
 
     @Test
@@ -68,7 +66,7 @@ public class MessageTest {
         personJsonObject.put("id", "4");
         personJsonObject.put("name", "ExampleUser");
         personJsonObject.put("surname", "ExampleUser");
-        HttpHeaders  headers = new HttpHeaders();
+        HttpHeaders headers = new HttpHeaders();
         headers.set("Content-Type", "application/json");
         HttpEntity<String> request = new HttpEntity<>(personJsonObject.toJSONString(), headers);
         // when:
@@ -89,7 +87,7 @@ public class MessageTest {
         personJsonObject.put("id", "8");
         personJsonObject.put("name", "ExampleUser2");
         personJsonObject.put("surname", "ExampleUser2");
-        HttpHeaders  headers = new HttpHeaders();
+        HttpHeaders headers = new HttpHeaders();
         headers.set("Content-Type", "application/json");
         HttpEntity<String> request = new HttpEntity<>(personJsonObject.toString(), headers);
         // when:
@@ -105,7 +103,7 @@ public class MessageTest {
         String url = "http://localhost:8080/person/delete/6";
         RestTemplate restTemplate = new RestTemplate();
         // when:
-        ResponseEntity<String> personResponseEntity = restTemplate.exchange(url, HttpMethod.DELETE, new HttpEntity(null,null), String.class);
+        ResponseEntity<String> personResponseEntity = restTemplate.exchange(url, HttpMethod.DELETE, new HttpEntity(null, null), String.class);
         // then:
         BDDAssertions.then(personResponseEntity.getStatusCodeValue()).isEqualTo(200);
         BDDAssertions.then(personResponseEntity.getBody()).isEqualTo("Person Not Deleted");
@@ -131,12 +129,12 @@ public class MessageTest {
         JSONObject personJsonObject = new JSONObject();
         personJsonObject.put("name", "BenFero");
         personJsonObject.put("surname", "BenFero");
-        HttpHeaders  headers = new HttpHeaders();
+        HttpHeaders headers = new HttpHeaders();
         headers.set("Content-Type", "application/json");
         HttpEntity<String> request = new HttpEntity<>(personJsonObject.toString(), headers);
 
         // when:
-        ResponseEntity<Person> personResponseEntity = restTemplate.exchange(url,HttpMethod.PUT, request, Person.class);
+        ResponseEntity<Person> personResponseEntity = restTemplate.exchange(url, HttpMethod.PUT, request, Person.class);
 
         // then:
         BDDAssertions.then(personResponseEntity.getStatusCodeValue()).isEqualTo(200);

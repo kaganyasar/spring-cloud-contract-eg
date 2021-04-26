@@ -23,6 +23,7 @@ import static org.mockito.ArgumentMatchers.eq;
 @AutoConfigureMessageVerifier
 @SpringBootTest(classes = ProducerApplication.class, webEnvironment = SpringBootTest.WebEnvironment.NONE)
 public abstract class PersonTest {
+
     @Autowired
     PersonRestController personRestController;
 

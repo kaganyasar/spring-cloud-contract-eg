@@ -127,8 +127,8 @@ public class MessageTest {
         String url = "http://localhost:8080/person/update/4";
         RestTemplate restTemplate = new RestTemplate();
         JSONObject personJsonObject = new JSONObject();
-        personJsonObject.put("name", "BenFero");
-        personJsonObject.put("surname", "BenFero");
+        personJsonObject.put("name", "Rick");
+        personJsonObject.put("surname", "Gordon");
         HttpHeaders headers = new HttpHeaders();
         headers.set("Content-Type", "application/json");
         HttpEntity<String> request = new HttpEntity<>(personJsonObject.toString(), headers);
@@ -139,7 +139,7 @@ public class MessageTest {
         // then:
         BDDAssertions.then(personResponseEntity.getStatusCodeValue()).isEqualTo(200);
         BDDAssertions.then(personResponseEntity.getBody().getId()).isEqualTo(4L);
-        BDDAssertions.then(personResponseEntity.getBody().getName()).isEqualTo("BenFero");
-        BDDAssertions.then(personResponseEntity.getBody().getSurname()).isEqualTo("BenFero");
+        BDDAssertions.then(personResponseEntity.getBody().getName()).isEqualTo("Rick");
+        BDDAssertions.then(personResponseEntity.getBody().getSurname()).isEqualTo("Gordon");
     }
 }

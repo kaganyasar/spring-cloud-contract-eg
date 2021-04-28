@@ -60,7 +60,7 @@ public abstract class PersonTest {
         //updatePerson herhangi bir person objesi ve personId:4 aldığında
         //thenReturn deki objeyi dönmesini söylüyoruz
         Mockito.when(personService.updatePerson(any(Person.class), eq(4L)))
-                .thenReturn(new Person(4L, "BenFero", "BenFero"));
+                .thenReturn(new Person(4L, "Rick", "Gordon"));
 
         //DeletePerson personId:6 ile çağrıldığında exception fırlatacak ve
         //controller da exception yakalandığı için person not deleted mesajını

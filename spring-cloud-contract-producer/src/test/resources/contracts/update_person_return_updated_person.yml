@@ -3,15 +3,15 @@ request:
   method: PUT
   url: /person/update/4
   body:
-    name: "BenFero"
-    surname: "BenFero"
+    name: "Rick"
+    surname: "Gordon"
   headers:
     Content-Type: application/json
 response:
   status: 200
   body:
     id: "4"
-    name: "BenFero"
-    surname: "BenFero"
+    name: "Rick"
+    surname: "Gordon"
   headers:
     Content-Type: application/json
